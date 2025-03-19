@@ -1,0 +1,34 @@
+{
+  "language": "Language",
+  "arabic": "Arabic",
+  "english": "English",
+  "themeMode": "Theme",
+  "darkMode": "Dark",
+  "lightMode": "Light",
+  "appTitle": "Event Planning",
+  "home": "Home",
+  "map": "Map",
+  "profile": "Profile",
+  "favorit": "Favorit",
+  "welcomeMessage": "Welcome Back",
+  "sports":"sports",
+  "birthDay":"birthDay",
+  "weather":"weather",
+  "more":"more",
+  "worekShope":"worekShope",
+  "all":"all",
+  "createEvent":"createEvent",
+  "title":"Title",
+  "event":"Event name",
+  
+  "eventDate":"Event Date",
+  "chooseDate":"Choose Date",
+  "eventTime":"Event Time",
+  "chooseTime":"choose Time",
+  "eventLocation":"Event Location",
+  "eventDisciption":"Event Description",
+  "addEvent":"Add Event",
+  "searchHint":"Search For Event"
+  
+
+}

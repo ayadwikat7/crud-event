@@ -1,0 +1,30 @@
+name: flutter_application_8
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'  # Ensures compatibility with dependencies
+
+dependencies:
+  cloud_firestore: ^5.6.5
+  firebase_core: ^3.12.1
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: 0.19.0  # Use a stable version instead of "any"
+  provider: ^6.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1  # Ensure compatibility with Flutter
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/
+
+include: package:flutter_lints/flutter.yaml
