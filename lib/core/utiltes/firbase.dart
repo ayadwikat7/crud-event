@@ -17,15 +17,25 @@ class Firbase {
     event.id = docRef.id;
     return docRef.set(event);
   }
+
   static Future<void> UpdateEventToFirStor(Eventmodel event) {
-  if (event.id.isEmpty) {
-    throw Exception("Event ID cannot be empty for an update.");
+    if (event.id.isEmpty) {
+      throw Exception("Event ID cannot be empty for an update.");
+    }
+
+    var collectionRef = getEventCollection();
+    var docRef = collectionRef.doc(event.id);
+
+    return docRef.set(event, SetOptions(merge: true));
   }
 
-  var collectionRef = getEventCollection();
-  var docRef = collectionRef.doc(event.id); 
+  static Future<void> removeEventFromFirestore(String eventId) {
+    if (eventId.isEmpty) {
+      throw Exception("Event ID cannot be empty for deletion.");
+    }
 
-  return docRef.set(event, SetOptions(merge: true)); 
-}
-
+    var collectionRef = getEventCollection();
+    var docRef = collectionRef.doc(eventId);
+    return docRef.delete();
+  }
 }

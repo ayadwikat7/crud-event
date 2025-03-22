@@ -12,14 +12,27 @@ import 'package:flutter_application_8/core/model/eventModel.dart';
 import 'package:flutter_application_8/core/utiltes/firbase.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class CreateEvent extends StatelessWidget {
+class CreateEvent extends StatefulWidget {
   CreateEvent({super.key});
+
+  @override
+  State<CreateEvent> createState() => _CreateEventState();
+}
+
+class _CreateEventState extends State<CreateEvent> {
   int selectedIndex = 0;
+
   final formKey = GlobalKey<FormState>();
+
   var titleController = TextEditingController();
+
   var descriptionController = TextEditingController();
+
   DateTime? selecetedDate;
+
   TimeOfDay? selecetedTime;
+
+  String selectedEvent = "";
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +73,7 @@ class CreateEvent extends StatelessWidget {
                 EventItmeWidget(
                   hig: null,
                   width: null,
-                  event: addEvent(),
+                  event: ,
                 ),
                 const SizedBox(height: 10),
                 Selectedtype(),
@@ -149,12 +162,13 @@ class CreateEvent extends StatelessWidget {
     );
   }
 
-  Future<void> addEvent() async {
+  Future<void> addEvents() async {
     var events = Eventmodel(
         title: titleController.text,
         description: descriptionController.text,
         dateTime: selecetedDate!,
-        time: selecetedTime!.format(context));
+        time: selecetedTime!.format(context),
+        eventName: 'Event one');
     try {
       await Firbase.addEeventToFirstor(events);
       print("Event Added");

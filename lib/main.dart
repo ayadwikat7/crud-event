@@ -3,6 +3,7 @@ import 'package:flutter_application_8/core/providers/app_providers_languges.dart
 import 'package:flutter_application_8/core/providers/app_them_provider.dart';
 import 'package:flutter_application_8/core/utiltes/appThem.dart';
 import 'package:flutter_application_8/featuers/home/homepage.dart';
+import 'package:flutter_application_8/featuers/loginpage.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -32,15 +33,14 @@ class MainApp extends StatelessWidget {
     var AppLangugeProvider = Provider.of<AppProvidersLanguges>(context);
     var AppThemePrpvider = Provider.of<AppThemProvider>(context);
     return MaterialApp(
-      locale: Locale(AppLangugeProvider.AppLanguge),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      themeMode: AppThemePrpvider.appTheme,
-      theme: ThemApp.lightMode,
-      darkTheme: ThemApp.darkMode, // Add this line to enable dark mode.
-      routes: {
-        '/': (context) => Homepage(),
-      },
-    );
+        locale: Locale(AppLangugeProvider.AppLanguge),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        themeMode: AppThemePrpvider.appTheme,
+        theme: ThemApp.lightMode,
+        darkTheme: ThemApp.darkMode, // Add this line to enable dark mode.
+        routes: {
+          '/': (context) => LogeinPage(),
+        });
   }
 }

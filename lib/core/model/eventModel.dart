@@ -6,6 +6,7 @@ class Eventmodel {
   DateTime dateTime;
   String time;
   bool isFavorite;
+  String eventName;
 
   Eventmodel({
     this.id = '',
@@ -14,6 +15,7 @@ class Eventmodel {
     required this.dateTime,
     required this.time,
     this.isFavorite = false,
+    required this.eventName
   });
 
   // Convert object to Firestore-compatible format
@@ -25,6 +27,7 @@ class Eventmodel {
       'dateTime': dateTime.millisecondsSinceEpoch,
       'time': time,
       'isFavorite': isFavorite,
+      "Event Name":eventName
     };
   }
 
@@ -37,6 +40,7 @@ class Eventmodel {
       dateTime: DateTime.fromMillisecondsSinceEpoch(data['dateTime'] ?? 0),
       time: data['time'] ?? '',
       isFavorite: data['isFavorite'] ?? false,
+      eventName: data["Event Name"]
     );
   }
 }
